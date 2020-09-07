@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/awesome-team-maker/precache-manifest.d1b648d2cf175e1d2886124d061a9872.js"
+  "/awesome-team-maker/precache-manifest.af442745be15ac508973e2fa03ae16ed.js"
 );
 
 self.addEventListener('message', (event) => {

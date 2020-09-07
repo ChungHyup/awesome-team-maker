@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4efc0685fa5765659176f73ea76bab1b",
+    "revision": "b8ab219bf31dd1b6bc4f94366ad876da",
     "url": "/awesome-team-maker/index.html"
   },
   {
-    "revision": "e726e32ac95f7c7ba793",
+    "revision": "c220dbdc0e49ab8a2bed",
     "url": "/awesome-team-maker/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "9b6e7ad349c0e94c65e0",
-    "url": "/awesome-team-maker/static/js/2.6acac45f.chunk.js"
+    "revision": "dc54cb895c92892a6e17",
+    "url": "/awesome-team-maker/static/js/2.060f3c20.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/awesome-team-maker/static/js/2.6acac45f.chunk.js.LICENSE.txt"
+    "revision": "0749163b59fbee32225059cb60c18af6",
+    "url": "/awesome-team-maker/static/js/2.060f3c20.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e726e32ac95f7c7ba793",
-    "url": "/awesome-team-maker/static/js/main.3eeda999.chunk.js"
+    "revision": "c220dbdc0e49ab8a2bed",
+    "url": "/awesome-team-maker/static/js/main.74307e0c.chunk.js"
   },
   {
     "revision": "716a40887e27c8486e47",
