@@ -4,9 +4,9 @@ export const teamActions = {
   add
 }
 
-function add(member) {
+function add(group, member) {
   return dispatch => {
-    dispatch(addMember(member));
+    dispatch(addMember(group, member));
   }
-  function addMember(member) { return { type: teamConstants.ADD, member } }
+  function addMember(group, member) { return { type: teamConstants.ADD, group, member } }
 }
