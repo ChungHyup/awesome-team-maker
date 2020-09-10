@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { AppBar, Toolbar, IconButton, Typography, Button, Container, Box, TextField, Grid, Paper} from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, Button, Container, Box, TextField, Grid, Paper, Dialog, DialogContent, FormHelperText } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Alert } from '@material-ui/lab';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
+import html2canvas from 'html2canvas';
 
 function App() {
   const [grpCnt, setGrpcnt] = useState(1)
@@ -11,6 +13,7 @@ function App() {
   const [message, setMessage] = useState();
   const [members, setMembers] = useState([""]);
   const [suffledMembers, setSuffledMembers] = useState();
+  const [canvas, setCanvas] = useState(false);
 
   const groupCountChange = (e) => {
     if(e.target.value !== 1) {
@@ -46,6 +49,20 @@ function App() {
       .map(a => a[1])
     setSuffledMembers(suffled);
   }
+
+  const captureBtnClick = (e) => {
+    const template = document.querySelector("#dialogContent");
+    console.log(template);
+    html2canvas(document.querySelector("#result-panel-paper")).then(canvas => {
+      const data = canvas.toDataURL();
+      setCanvas(data);
+    });
+  }
+
+  const canvasClose = (e) => {
+    setCanvas();
+  }
+
   return (
     <Box>
       <AppBar position="static">
@@ -59,6 +76,11 @@ function App() {
         </Toolbar>
       </AppBar>
       <Container>
+        <Dialog open={canvas?true:false} onClose={canvasClose} maxWidth="lg" fullWidth={true}>
+          <DialogContent id="dialogContent">
+            <img style={{ width: "100%" }} src={canvas}/>
+          </DialogContent>
+        </Dialog>
         <Box mt={4}>
           <Grid container direction="row"   alignItems="center" spacing={4}>
             <Grid item>
@@ -126,34 +148,45 @@ function App() {
                 </Button>
               </Box>
               { suffledMembers &&
-                <Box mt={4}>
-                  <Grid container direction="row">
-                    <Grid xs={6}>
-                      <Box textAlign="center">
-                        <h3>블루팀</h3>
-                        { Array.apply(null, { length: Math.floor(suffledMembers.length/2) }).map( (e, i) => {
-                          return(
-                            <Box>
-                              {suffledMembers[i]}
-                            </Box>
-                          )
-                          
-                        })}
-                      </Box>
-                    </Grid>
-                    <Grid xs={6}>
-                      <Box textAlign="center">
-                        <h3>레드팀</h3>
-                        { Array.apply(null, { length: suffledMembers.length - Math.floor(suffledMembers.length/2) }).map( (e, i) => {
-                          return(
-                            <Box>
-                              {suffledMembers[Math.floor(suffledMembers.length/2)+i]}
-                            </Box>
-                          )
-                        })}
-                      </Box>
-                    </Grid>
-                  </Grid>
+                <Box id="result-panel" mt={4}>
+                  <Paper id="result-panel-paper">
+                    <Box p={2}>
+                      <Grid container direction="row">
+                        <Grid xs={6}>
+                          <Box textAlign="center">
+                            <h3>블루팀</h3>
+                            { Array.apply(null, { length: Math.floor(suffledMembers.length/2) }).map( (e, i) => {
+                              return(
+                                <Box>
+                                  {suffledMembers[i]}
+                                </Box>
+                              )
+                              
+                            })}
+                          </Box>
+                        </Grid>
+                        <Grid xs={6}>
+                          <Box textAlign="center">
+                            <h3>레드팀</h3>
+                            { Array.apply(null, { length: suffledMembers.length - Math.floor(suffledMembers.length/2) }).map( (e, i) => {
+                              return(
+                                <Box>
+                                  {suffledMembers[Math.floor(suffledMembers.length/2)+i]}
+                                </Box>
+                              )
+                            })}
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </Paper>
+                  
+                  <Box textAlign="center">
+                    <Button onClick={captureBtnClick}>
+                          <CameraAltIcon fontSize="large"/>
+                    </Button>
+                    <FormHelperText style={{ textAlign: "center" }}>버튼을 누르면 img 파일로 생성됩니다. '다른 이름으로 저장'을 통해 다운로드 가능</FormHelperText>
+                  </Box>  
                 </Box>
               }
             </Box>
