@@ -154,11 +154,11 @@ function App() {
                       <Grid container direction="row">
                         <Grid xs={6}>
                           <Box textAlign="center">
-                            <h3>블루팀</h3>
+                            <h3 style={{ color: 'blue' }}>블루팀</h3>
                             { Array.apply(null, { length: Math.floor(suffledMembers.length/2) }).map( (e, i) => {
                               return(
                                 <Box>
-                                  {suffledMembers[i]}
+                                  <h4>{suffledMembers[i]}</h4>
                                 </Box>
                               )
                               
@@ -167,11 +167,11 @@ function App() {
                         </Grid>
                         <Grid xs={6}>
                           <Box textAlign="center">
-                            <h3>레드팀</h3>
+                            <h3 style={{ color: 'red' }}>레드팀</h3>
                             { Array.apply(null, { length: suffledMembers.length - Math.floor(suffledMembers.length/2) }).map( (e, i) => {
                               return(
                                 <Box>
-                                  {suffledMembers[Math.floor(suffledMembers.length/2)+i]}
+                                  <h4>{suffledMembers[Math.floor(suffledMembers.length/2)+i]}</h4>
                                 </Box>
                               )
                             })}
