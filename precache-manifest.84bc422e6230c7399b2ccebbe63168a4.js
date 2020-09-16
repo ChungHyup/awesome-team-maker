@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb02c476ef6b374288f82110d228a5d5",
+    "revision": "10919d558cb97b4ee38e1b1d7d505cb8",
     "url": "/awesome-team-maker/index.html"
   },
   {
-    "revision": "7c53c522a69efdf2df0c",
+    "revision": "3c9643dd45623fa7b465",
     "url": "/awesome-team-maker/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/awesome-team-maker/static/js/2.f7a48bba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c53c522a69efdf2df0c",
-    "url": "/awesome-team-maker/static/js/main.c5bf2598.chunk.js"
+    "revision": "3c9643dd45623fa7b465",
+    "url": "/awesome-team-maker/static/js/main.ed73cfa7.chunk.js"
   },
   {
     "revision": "716a40887e27c8486e47",
